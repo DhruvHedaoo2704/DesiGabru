@@ -46,7 +46,15 @@ export default function CartDrawer() {
               ) : (
                 items.map((item) => (
                   <div key={`${item._id}-${item.size}`} className="flex gap-4 glass p-3 rounded-xl">
-                    <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded-lg" />
+                    <img 
+                      src={item.image} 
+                      alt={item.name} 
+                      className="w-20 h-20 object-cover rounded-lg" 
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = 'https://images.unsplash.com/photo-1616390323981-fd529c7d7f9a?w=800&q=80&auto=format&fit=crop';
+                      }}
+                    />
                     <div className="flex-1">
                       <h4 className="font-medium text-sm">{item.name}</h4>
                       <p className="text-[#D4AF37] font-bold">₹{item.price}</p>

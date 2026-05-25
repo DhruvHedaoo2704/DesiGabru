@@ -22,7 +22,8 @@ router.get('/trending', getTrending);
 router.get('/bundles', getBundles);
 router.get('/category/:category', getProductsByCategory);
 router.get('/slug/:slug', getProductBySlug);
-router.get('/:id', getProduct);
+router.get('/:slug', getProductBySlug);
+
 router.post('/', protect, authorize('admin'), createProduct);
 router.put('/:id', protect, authorize('admin'), updateProduct);
 router.delete('/:id', protect, authorize('admin'), deleteProduct);

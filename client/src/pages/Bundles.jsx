@@ -48,12 +48,22 @@ export default function Bundles() {
               )}
               <div className="grid md:grid-cols-2">
                 <div className="aspect-square overflow-hidden">
-                  <img src={b.images?.[0]} alt={b.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img 
+                    src={b.images?.[0]} 
+                    alt={b.name} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = 'https://images.unsplash.com/photo-1616390323981-fd529c7d7f9a?w=800&q=80&auto=format&fit=crop';
+                    }}
+                  />
                 </div>
                 <div className="p-6 flex flex-col justify-center">
                   <FiPackage className="text-[#D4AF37] mb-3" size={28} />
                   <h3 className="text-xl font-bold mb-2">{b.name}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{b.description}</p>
+                  <p className="text-gray-400 text-sm mb-4">
+                    {Array.isArray(b.description) ? b.description.join(' ') : b.description}
+                  </p>
                   <div className="flex items-baseline gap-2 mb-4">
                     <span className="text-2xl font-bold text-[#D4AF37]">₹{b.price}</span>
                     <span className="text-gray-500 line-through">₹{b.comparePrice}</span>

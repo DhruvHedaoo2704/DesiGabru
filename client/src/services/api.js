@@ -36,7 +36,7 @@ export const resetPassword = (token, password) =>
 // Products
 export const getProducts = (params) => api.get('/products', { params });
 export const getProduct = (id) => api.get(`/products/${id}`);
-export const getProductBySlug = (slug) => api.get(`/products/slug/${slug}`);
+export const getProductBySlug = (slug) => api.get(`/products/${slug}`);
 export const getFeatured = () => api.get('/products/featured');
 export const getTrending = () => api.get('/products/trending');
 export const getBundles = () => api.get('/products/bundles');

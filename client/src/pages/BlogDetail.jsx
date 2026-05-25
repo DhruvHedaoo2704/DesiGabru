@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { getBlog } from '../services/api';
-import { blogs } from '../../../server/data/products.js';
 import { PageLoader } from '../components/Skeleton';
 
 export default function BlogDetail() {
@@ -12,7 +11,7 @@ export default function BlogDetail() {
   useEffect(() => {
     getBlog(slug)
       .then((r) => setBlog(r.data.blog))
-      .catch(() => setBlog(blogs.find((b) => b.slug === slug)));
+      .catch(() => setBlog(null));
   }, [slug]);
 
   if (!blog) return <PageLoader />;

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronDown } from 'react-icons/fi';
 import SEO from '../components/SEO';
 import { getBlogs } from '../services/api';
-import { blogs as backendBlogs, faqs } from '../../../server/data/products.js';
+import { faqs } from '../data/staticData.js';
 
 export default function Blog() {
   const [blogs, setBlogs] = useState([]);
@@ -14,7 +14,7 @@ export default function Blog() {
   useEffect(() => {
     getBlogs()
       .then((r) => setBlogs(r.data.blogs))
-      .catch(() => setBlogs(backendBlogs));
+      .catch(() => setBlogs([]));
   }, []);
 
   const filtered = blogs.filter(

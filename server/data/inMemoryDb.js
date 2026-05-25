@@ -42,8 +42,12 @@ class InMemoryDb {
       try {
         const fileData = fs.readFileSync(STORE_FILE, 'utf-8');
         this.collections = JSON.parse(fileData);
+        
+        // Always synchronize static catalog data with server/data/products.js on startup
+        await this.syncStaticData();
+        
         this.initialized = true;
-        console.log('✨ Hydrated Desii Gabru In-Memory State from disk');
+        console.log('✨ Hydrated Desii Gabru In-Memory State from disk & synced products.js');
         return;
       } catch (err) {
         console.error('Failed to parse persistent DB file, seeding fresh', err);
@@ -53,6 +57,97 @@ class InMemoryDb {
     // Seed data
     await this.seed();
     this.initialized = true;
+    this.saveToDisk();
+  }
+
+  async syncStaticData() {
+    // 1. Sync Categories
+    this.collections.categories = initialCategories.map(cat => {
+      const existing = this.collections.categories?.find(c => c.slug === cat.slug);
+      return {
+        _id: existing ? existing._id : generateId(),
+        ...cat,
+        createdAt: existing ? existing.createdAt : new Date(),
+        updatedAt: new Date()
+      };
+    });
+
+    // 2. Sync Products
+    this.collections.products = initialProducts.map(p => {
+      const existing = this.collections.products?.find(prod => prod.slug === p.slug || prod.sku === p.sku);
+      const catObj = this.collections.categories.find(c => c.slug === p.category);
+      return {
+        _id: existing ? existing._id : generateId(),
+        brand: 'Desii Gabru',
+        images: p.images || [],
+        comparePrice: p.comparePrice || 0,
+        sizes: p.sizes || [
+          { label: '50ml', price: p.price, stock: Math.floor(p.stock / 2) },
+          { label: '100ml', price: Math.round(p.price * 1.6), stock: Math.floor(p.stock / 2) }
+        ],
+        stock: p.stock || 0,
+        ingredients: p.ingredients || [],
+        usageGuide: p.usageGuide || '',
+        isFeatured: p.isFeatured || false,
+        isTrending: p.isTrending || false,
+        isBundle: p.isBundle || false,
+        bundleSavePercent: p.bundleSavePercent || 0,
+        ratings: p.ratings || 4.5,
+        numReviews: p.numReviews || 0,
+        reviews: existing ? existing.reviews : [],
+        tags: p.tags || [],
+        sku: p.sku || `DG-${p.category?.toUpperCase() || 'GEN'}-${Math.floor(100 + Math.random() * 900)}`,
+        categoryRef: catObj ? catObj._id : null,
+        ...p,
+        createdAt: existing ? existing.createdAt : new Date(),
+        updatedAt: new Date()
+      };
+    });
+
+    // Populate bundleItems references
+    const createdProducts = this.collections.products;
+    const kit = createdProducts.find((p) => p.slug === 'cyber-king-grooming-kit');
+    const duo = createdProducts.find((p) => p.slug === 'alpha-beard-duo');
+
+    if (kit) {
+      kit.bundleItems = createdProducts
+        .filter((p) => !p.isBundle)
+        .slice(0, 5)
+        .map((p) => p._id);
+    }
+    if (duo) {
+      duo.bundleItems = createdProducts
+        .filter((p) => ['royal-beard-elixir', 'midnight-beard-balm'].includes(p.slug))
+        .map((p) => p._id);
+    }
+
+    // 3. Sync Blogs
+    const admin = this.collections.users?.find(u => u.role === 'admin');
+    const adminId = admin ? admin._id : generateId();
+    this.collections.blogs = initialBlogs.map(b => {
+      const existing = this.collections.blogs?.find(blog => blog.slug === b.slug);
+      return {
+        _id: existing ? existing._id : generateId(),
+        ...b,
+        author: adminId,
+        createdAt: existing ? existing.createdAt : new Date(),
+        updatedAt: new Date()
+      };
+    });
+
+    // 4. Sync Coupons
+    this.collections.coupons = initialCoupons.map(c => {
+      const existing = this.collections.coupons?.find(cp => cp.code === c.code);
+      return {
+        _id: existing ? existing._id : generateId(),
+        isActive: true,
+        usedCount: 0,
+        ...c,
+        createdAt: existing ? existing.createdAt : new Date(),
+        updatedAt: new Date()
+      };
+    });
+
     this.saveToDisk();
   }
 

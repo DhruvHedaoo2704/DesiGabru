@@ -37,11 +37,15 @@ export default function ProductCard({ product }) {
 
       <Link to={`/product/${product.slug}`} className="block">
         <div className="aspect-square overflow-hidden bg-[#111]">
-          <img
+           <img
             src={product.images?.[0]}
             alt={product.name}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             loading="lazy"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = 'https://images.unsplash.com/photo-1616390323981-fd529c7d7f9a?w=800&q=80&auto=format&fit=crop';
+            }}
           />
         </div>
         <div className="p-4">

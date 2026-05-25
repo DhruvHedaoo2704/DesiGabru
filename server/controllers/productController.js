@@ -18,19 +18,46 @@ export const getProducts = async (req, res) => {
 };
 
 export const getProduct = async (req, res) => {
-  const product = await Product.findById(req.params.id).populate('bundleItems', 'name images price');
-  if (!product) {
-    return res.status(404).json({ success: false, message: 'Product not found' });
+  try {
+    const product = await Product.findById(req.params.id).populate('bundleItems', 'name images price');
+    if (!product) {
+      return res.status(404).json({ success: false, message: 'Product not found' });
+    }
+    res.json({ success: true, product });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
   }
-  res.json({ success: true, product });
 };
 
 export const getProductBySlug = async (req, res) => {
-  const product = await Product.findOne({ slug: req.params.slug }).populate('bundleItems');
-  if (!product) {
-    return res.status(404).json({ success: false, message: 'Product not found' });
+  try {
+    const { slug } = req.params;
+    console.log(`🔍 [API] Fetching product by slug/id: "${slug}"`);
+
+    let product = null;
+    const isId = /^[0-9a-fA-F]{24}$/.test(slug);
+
+    if (isId) {
+      console.log(`🆔 [API] Parameter "${slug}" detected as a 24-character hex ID, querying by ID first.`);
+      product = await Product.findById(slug).populate('bundleItems');
+    }
+
+    if (!product) {
+      console.log(`🏷️ [API] Querying product by slug: "${slug}"`);
+      product = await Product.findOne({ slug }).populate('bundleItems');
+    }
+
+    if (!product) {
+      console.warn(`⚠️ [API] Product not found for query: "${slug}"`);
+      return res.status(404).json({ success: false, message: 'Product not found' });
+    }
+
+    console.log(`✅ [API] Product successfully resolved: "${product.name}" (ID: ${product._id})`);
+    res.json({ success: true, product });
+  } catch (error) {
+    console.error(`❌ [API] Error fetching product for "${req.params.slug}":`, error);
+    res.status(500).json({ success: false, message: 'Internal Server Error', error: error.message });
   }
-  res.json({ success: true, product });
 };
 
 export const createProduct = async (req, res) => {
