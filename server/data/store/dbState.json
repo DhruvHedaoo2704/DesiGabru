@@ -1,0 +1,496 @@
+{
+  "users": [
+    {
+      "_id": "8a3e3a2f7297ba848d701685",
+      "name": "Admin",
+      "email": "admin@desiigabru.com",
+      "password": "$2b$12$gNLT1ymPv/HVnBm0HXTOPuMi5GkM/gyRcW/NXE0gqc7EIfcmhLeF2",
+      "role": "admin",
+      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150",
+      "phone": "9876543210",
+      "addresses": [],
+      "loyaltyPoints": 1000,
+      "isVerified": true,
+      "createdAt": "2026-05-25T08:54:33.374Z",
+      "updatedAt": "2026-05-25T08:54:33.374Z"
+    },
+    {
+      "_id": "a4f7bf08d79c780c71d2426d",
+      "name": "Demo User",
+      "email": "demo@desiigabru.com",
+      "password": "$2b$12$1vvU7hmId7ma8.aAJyx9WeLcw6Bv5DCJOgdd07rCts/ACOz49ltWq",
+      "role": "user",
+      "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150",
+      "phone": "9876543211",
+      "addresses": [
+        {
+          "_id": "a4b266bc5e89075c41185fe3",
+          "label": "Home",
+          "fullName": "Demo User",
+          "phone": "9876543211",
+          "street": "404 Cyberspace Ave, Sector 62",
+          "city": "Noida",
+          "state": "Uttar Pradesh",
+          "postalCode": "201301",
+          "country": "India",
+          "isDefault": true
+        }
+      ],
+      "loyaltyPoints": 250,
+      "isVerified": true,
+      "createdAt": "2026-05-25T08:54:33.374Z",
+      "updatedAt": "2026-05-25T08:54:33.374Z"
+    }
+  ],
+  "products": [
+    {
+      "_id": "5fc54d53a8cf4f774a985cfa",
+      "brand": "Desii Gabru",
+      "images": [
+        "https://images.unsplash.com/photo-1616390323981-fd529c7d7f9a?w=800&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80&auto=format&fit=crop"
+      ],
+      "comparePrice": 1199,
+      "sizes": [
+        {
+          "label": "50ml",
+          "price": 899,
+          "stock": 60
+        },
+        {
+          "label": "100ml",
+          "price": 1438,
+          "stock": 60
+        }
+      ],
+      "stock": 120,
+      "ingredients": [
+        "Argan Oil",
+        "Jojoba",
+        "Sandalwood",
+        "Vitamin E"
+      ],
+      "usageGuide": "Apply 4-6 drops to damp beard. Massage into skin beneath.",
+      "isFeatured": true,
+      "isTrending": true,
+      "isBundle": false,
+      "bundleSavePercent": 0,
+      "ratings": 4.8,
+      "numReviews": 234,
+      "reviews": [],
+      "tags": [
+        "bestseller",
+        "beard"
+      ],
+      "sku": "DG-BE-001",
+      "categoryRef": "29891f88dd5d2ab4779a223b",
+      "name": "Royal Beard Elixir",
+      "slug": "royal-beard-elixir",
+      "description": "Luxury beard oil infused with argan, jojoba, and sandalwood. Softens, nourishes, and adds a subtle metallic sheen.",
+      "category": "beard",
+      "price": 899,
+      "createdAt": "2026-05-25T08:54:33.375Z",
+      "updatedAt": "2026-05-25T08:54:33.375Z"
+    },
+    {
+      "_id": "7b421ab859ff185ba2fb3a7c",
+      "brand": "Desii Gabru",
+      "images": [
+        "https://images.unsplash.com/photo-1622286342628-267fd0f9389f?w=800&q=80&auto=format&fit=crop"
+      ],
+      "comparePrice": 999,
+      "sizes": [
+        {
+          "label": "50ml",
+          "price": 749,
+          "stock": 42
+        },
+        {
+          "label": "100ml",
+          "price": 1198,
+          "stock": 42
+        }
+      ],
+      "stock": 85,
+      "ingredients": [
+        "Beeswax",
+        "Shea Butter",
+        "Cedarwood"
+      ],
+      "usageGuide": "Warm between palms. Work through beard from roots to tips.",
+      "isFeatured": false,
+      "isTrending": true,
+      "isBundle": false,
+      "bundleSavePercent": 0,
+      "ratings": 4.6,
+      "numReviews": 156,
+      "reviews": [],
+      "tags": [],
+      "sku": "DG-BE-002",
+      "categoryRef": "29891f88dd5d2ab4779a223b",
+      "name": "Midnight Beard Balm",
+      "slug": "midnight-beard-balm",
+      "description": "Matte-hold balm with beeswax and shea butter for sculpted, touchable beards.",
+      "category": "beard",
+      "price": 749,
+      "createdAt": "2026-05-25T08:54:33.375Z",
+      "updatedAt": "2026-05-25T08:54:33.375Z"
+    },
+    {
+      "_id": "a8bf4f4721b742b8539f3e59",
+      "brand": "Desii Gabru",
+      "images": [
+        "https://images.unsplash.com/photo-1556228720-195a672ede8b?w=800&q=80&auto=format&fit=crop"
+      ],
+      "comparePrice": 799,
+      "sizes": [
+        {
+          "label": "50ml",
+          "price": 599,
+          "stock": 100
+        },
+        {
+          "label": "100ml",
+          "price": 958,
+          "stock": 100
+        }
+      ],
+      "stock": 200,
+      "ingredients": [
+        "Activated Charcoal",
+        "Tea Tree",
+        "Aloe Vera"
+      ],
+      "usageGuide": "Use morning and night. Massage 30 seconds, rinse with cool water.",
+      "isFeatured": true,
+      "isTrending": true,
+      "isBundle": false,
+      "bundleSavePercent": 0,
+      "ratings": 4.7,
+      "numReviews": 412,
+      "reviews": [],
+      "tags": [],
+      "sku": "DG-FC-001",
+      "categoryRef": "ad64e9c14888018947f2a707",
+      "name": "Charcoal Detox Face Wash",
+      "slug": "charcoal-detox-face-wash",
+      "description": "Deep-cleansing activated charcoal wash that removes grime without stripping moisture.",
+      "category": "face",
+      "price": 599,
+      "createdAt": "2026-05-25T08:54:33.375Z",
+      "updatedAt": "2026-05-25T08:54:33.375Z"
+    },
+    {
+      "_id": "12f275455a04708b056c950e",
+      "brand": "Desii Gabru",
+      "images": [
+        "https://images.unsplash.com/photo-1570172619644-dfd03ed5d874?w=800&q=80&auto=format&fit=crop"
+      ],
+      "comparePrice": 1099,
+      "sizes": [
+        {
+          "label": "50ml",
+          "price": 849,
+          "stock": 75
+        },
+        {
+          "label": "100ml",
+          "price": 1358,
+          "stock": 75
+        }
+      ],
+      "stock": 150,
+      "ingredients": [
+        "Hyaluronic Acid",
+        "Niacinamide",
+        "SPF 15"
+      ],
+      "usageGuide": "",
+      "isFeatured": true,
+      "isTrending": false,
+      "isBundle": false,
+      "bundleSavePercent": 0,
+      "ratings": 4.9,
+      "numReviews": 289,
+      "reviews": [],
+      "tags": [],
+      "sku": "DG-FC-002",
+      "categoryRef": "ad64e9c14888018947f2a707",
+      "name": "Hydra Shield Moisturizer",
+      "slug": "hydra-shield-moisturizer",
+      "description": "Lightweight gel-cream with hyaluronic acid for 24hr hydration and matte finish.",
+      "category": "face",
+      "price": 849,
+      "createdAt": "2026-05-25T08:54:33.375Z",
+      "updatedAt": "2026-05-25T08:54:33.375Z"
+    },
+    {
+      "_id": "9614acc4e5ee7da7d1c7e50a",
+      "brand": "Desii Gabru",
+      "images": [
+        "https://images.unsplash.com/photo-1522338241087-90e20e0ad128?w=800&q=80&auto=format&fit=crop"
+      ],
+      "comparePrice": 849,
+      "sizes": [
+        {
+          "label": "50ml",
+          "price": 649,
+          "stock": 87
+        },
+        {
+          "label": "100ml",
+          "price": 1038,
+          "stock": 87
+        }
+      ],
+      "stock": 175,
+      "ingredients": [
+        "Carnauba Wax",
+        "Kaolin Clay",
+        "Peppermint"
+      ],
+      "usageGuide": "Rub pea-sized amount between palms. Style on dry or damp hair.",
+      "isFeatured": false,
+      "isTrending": true,
+      "isBundle": false,
+      "bundleSavePercent": 0,
+      "ratings": 4.5,
+      "numReviews": 198,
+      "reviews": [],
+      "tags": [],
+      "sku": "DG-HR-001",
+      "categoryRef": "35f8d206e35ef9edf597495e",
+      "name": "Titanium Hair Wax",
+      "slug": "titanium-hair-wax",
+      "description": "High-hold, zero-flake wax with metallic finish. Re-workable all day.",
+      "category": "hair",
+      "price": 649,
+      "createdAt": "2026-05-25T08:54:33.375Z",
+      "updatedAt": "2026-05-25T08:54:33.375Z"
+    },
+    {
+      "_id": "7877d179b280a66e58356d73",
+      "brand": "Desii Gabru",
+      "images": [
+        "https://images.unsplash.com/photo-1608248548313-54348c404a40?w=800&q=80&auto=format&fit=crop"
+      ],
+      "comparePrice": 899,
+      "sizes": [
+        {
+          "label": "50ml",
+          "price": 699,
+          "stock": 45
+        },
+        {
+          "label": "100ml",
+          "price": 1118,
+          "stock": 45
+        }
+      ],
+      "stock": 90,
+      "ingredients": [],
+      "usageGuide": "",
+      "isFeatured": false,
+      "isTrending": false,
+      "isBundle": false,
+      "bundleSavePercent": 0,
+      "ratings": 4.4,
+      "numReviews": 87,
+      "reviews": [],
+      "tags": [],
+      "sku": "DG-HR-002",
+      "categoryRef": "35f8d206e35ef9edf597495e",
+      "name": "Neon Volume Pomade",
+      "slug": "neon-volume-pomade",
+      "description": "Medium shine pomade for textured, voluminous styles with copper-toned finish.",
+      "category": "hair",
+      "price": 699,
+      "createdAt": "2026-05-25T08:54:33.375Z",
+      "updatedAt": "2026-05-25T08:54:33.375Z"
+    },
+    {
+      "_id": "59f57ce9aeef837e8bc09d4d",
+      "brand": "Desii Gabru",
+      "images": [
+        "https://images.unsplash.com/photo-1599351431202-1e0c2647b7ca?w=800&q=80&auto=format&fit=crop"
+      ],
+      "comparePrice": 3345,
+      "sizes": [
+        {
+          "label": "50ml",
+          "price": 2499,
+          "stock": 25
+        },
+        {
+          "label": "100ml",
+          "price": 3998,
+          "stock": 25
+        }
+      ],
+      "stock": 50,
+      "ingredients": [],
+      "usageGuide": "",
+      "isFeatured": true,
+      "isTrending": false,
+      "isBundle": true,
+      "bundleSavePercent": 25,
+      "ratings": 4.9,
+      "numReviews": 67,
+      "reviews": [],
+      "tags": [],
+      "sku": "DG-BD-001",
+      "categoryRef": null,
+      "name": "Cyber King Grooming Kit",
+      "slug": "cyber-king-grooming-kit",
+      "description": "Complete grooming arsenal: beard oil, balm, face wash, moisturizer, and hair wax.",
+      "category": "bundle",
+      "price": 2499,
+      "createdAt": "2026-05-25T08:54:33.375Z",
+      "updatedAt": "2026-05-25T08:54:33.375Z",
+      "bundleItems": [
+        "5fc54d53a8cf4f774a985cfa",
+        "7b421ab859ff185ba2fb3a7c",
+        "a8bf4f4721b742b8539f3e59",
+        "12f275455a04708b056c950e",
+        "9614acc4e5ee7da7d1c7e50a"
+      ]
+    },
+    {
+      "_id": "90c1dc81cba32a35fce673d5",
+      "brand": "Desii Gabru",
+      "images": [
+        "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80&auto=format&fit=crop"
+      ],
+      "comparePrice": 1648,
+      "sizes": [
+        {
+          "label": "50ml",
+          "price": 1299,
+          "stock": 37
+        },
+        {
+          "label": "100ml",
+          "price": 2078,
+          "stock": 37
+        }
+      ],
+      "stock": 75,
+      "ingredients": [],
+      "usageGuide": "",
+      "isFeatured": false,
+      "isTrending": true,
+      "isBundle": true,
+      "bundleSavePercent": 18,
+      "ratings": 4.8,
+      "numReviews": 45,
+      "reviews": [],
+      "tags": [],
+      "sku": "DG-BD-002",
+      "categoryRef": null,
+      "name": "Alpha Beard Duo",
+      "slug": "alpha-beard-duo",
+      "description": "Royal Beard Elixir + Midnight Beard Balm combo for the ultimate beard routine.",
+      "category": "bundle",
+      "price": 1299,
+      "createdAt": "2026-05-25T08:54:33.375Z",
+      "updatedAt": "2026-05-25T08:54:33.375Z",
+      "bundleItems": [
+        "5fc54d53a8cf4f774a985cfa",
+        "7b421ab859ff185ba2fb3a7c"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "_id": "29891f88dd5d2ab4779a223b",
+      "name": "Beard",
+      "slug": "beard",
+      "description": "Premium beard care",
+      "createdAt": "2026-05-25T08:54:33.374Z",
+      "updatedAt": "2026-05-25T08:54:33.374Z"
+    },
+    {
+      "_id": "ad64e9c14888018947f2a707",
+      "name": "Face",
+      "slug": "face",
+      "description": "Face & skin essentials",
+      "createdAt": "2026-05-25T08:54:33.374Z",
+      "updatedAt": "2026-05-25T08:54:33.374Z"
+    },
+    {
+      "_id": "35f8d206e35ef9edf597495e",
+      "name": "Hair",
+      "slug": "hair",
+      "description": "Hair styling & care",
+      "createdAt": "2026-05-25T08:54:33.374Z",
+      "updatedAt": "2026-05-25T08:54:33.374Z"
+    }
+  ],
+  "blogs": [
+    {
+      "_id": "59a8b58e1cd09beee191e3ff",
+      "title": "The Modern Desi Man's Grooming Ritual",
+      "slug": "modern-desi-grooming-ritual",
+      "excerpt": "Discover the 5-step routine that transforms your daily grind into a luxury ritual.",
+      "content": "<p>Grooming is not vanity—it is discipline. Start with charcoal cleanse, hydrate, then style with intention...</p>",
+      "coverImage": "https://images.unsplash.com/photo-1616390323981-fd529c7d7f9a?w=800&q=80&auto=format&fit=crop",
+      "tags": [
+        "routine",
+        "tips"
+      ],
+      "readTime": 6,
+      "author": "8a3e3a2f7297ba848d701685",
+      "createdAt": "2026-05-25T08:54:33.375Z",
+      "updatedAt": "2026-05-25T08:54:33.375Z"
+    },
+    {
+      "_id": "2a0b624d1d946d551e6f0c03",
+      "title": "Beard Care 101: From Patchy to Powerful",
+      "slug": "beard-care-101",
+      "excerpt": "Science-backed tips to grow, maintain, and style your beard like royalty.",
+      "content": "<p>Patience, oil, and balm—the holy trinity of beard mastery...</p>",
+      "coverImage": "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80&auto=format&fit=crop",
+      "tags": [
+        "beard",
+        "guide"
+      ],
+      "readTime": 8,
+      "author": "8a3e3a2f7297ba848d701685",
+      "createdAt": "2026-05-25T08:54:33.375Z",
+      "updatedAt": "2026-05-25T08:54:33.375Z"
+    }
+  ],
+  "coupons": [
+    {
+      "_id": "ce7cea6c09b2cb19e77f27c7",
+      "isActive": true,
+      "usedCount": 0,
+      "code": "GABRU10",
+      "description": "10% off your first order",
+      "discountType": "percent",
+      "discountValue": 10,
+      "minOrderAmount": 500,
+      "maxUses": 1000,
+      "expiresAt": "2027-12-31T00:00:00.000Z",
+      "createdAt": "2026-05-25T08:54:33.375Z",
+      "updatedAt": "2026-05-25T08:54:33.375Z"
+    },
+    {
+      "_id": "f6cd02f6d2e7adfddfe91c41",
+      "isActive": true,
+      "usedCount": 0,
+      "code": "FREESHIP",
+      "description": "Flat ₹100 off",
+      "discountType": "fixed",
+      "discountValue": 100,
+      "minOrderAmount": 799,
+      "maxUses": 500,
+      "expiresAt": "2027-06-30T00:00:00.000Z",
+      "createdAt": "2026-05-25T08:54:33.375Z",
+      "updatedAt": "2026-05-25T08:54:33.375Z"
+    }
+  ],
+  "orders": [],
+  "carts": [],
+  "wishlists": []
+}
