@@ -6,7 +6,6 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import rateLimit from 'express-rate-limit';
-import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middleware/errorHandler.js';
 
 import authRoutes from './routes/authRoutes.js';
@@ -18,8 +17,6 @@ import blogRoutes from './routes/blogRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
-
-connectDB();
 
 const app = express();
 

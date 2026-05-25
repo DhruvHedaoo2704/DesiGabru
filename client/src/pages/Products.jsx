@@ -5,7 +5,6 @@ import SEO from '../components/SEO';
 import ProductCard from '../components/ProductCard';
 import { ProductSkeleton } from '../components/Skeleton';
 import { getProducts } from '../services/api';
-import { dummyProducts } from '../utils/dummyData';
 import { normalizeProducts } from '../utils/normalizeProducts';
 
 const categories = ['all', 'beard', 'face', 'hair'];

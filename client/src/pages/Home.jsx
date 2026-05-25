@@ -8,7 +8,7 @@ import Particles from '../components/Particles';
 import ProductCard from '../components/ProductCard';
 import { ProductSkeleton } from '../components/Skeleton';
 import { getTrending, getFeatured } from '../services/api';
-import { dummyProducts, testimonials } from '../utils/dummyData';
+import { products, testimonials } from '../../../server/data/products.js';
 import { normalizeProducts } from '../utils/normalizeProducts';
 
 function Countdown() {

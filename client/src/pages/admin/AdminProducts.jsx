@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { getProducts, deleteProduct } from '../../services/api';
-import { dummyProducts } from '../../utils/dummyData';
 import { normalizeProducts } from '../../utils/normalizeProducts';
 
 export default function AdminProducts() {

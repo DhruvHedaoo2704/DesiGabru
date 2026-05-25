@@ -5,7 +5,7 @@ import { FiStar, FiMinus, FiPlus, FiShoppingBag } from 'react-icons/fi';
 import SEO from '../components/SEO';
 import ProductCard from '../components/ProductCard';
 import { getProductBySlug, getProducts } from '../services/api';
-import { dummyProducts } from '../utils/dummyData';
+import { products } from '../../../server/data/products.js';
 import { useCartStore } from '../store/useCartStore';
 import { useUIStore } from '../store/useUIStore';
 import { PageLoader } from '../components/Skeleton';
@@ -24,19 +24,23 @@ export default function ProductDetail() {
   const addRecentlyViewed = useUIStore((s) => s.addRecentlyViewed);
 
   useEffect(() => {
-    const load = async () => {
-      try {
-        const { data } = await getProductBySlug(slug);
-        setProduct(data.product);
-        addRecentlyViewed(data.product);
-        const rel = await getProducts({ category: data.product.category, limit: 4 });
-        setRelated(rel.data.products.filter((p) => p.slug !== slug).slice(0, 4));
-      } catch {
+    const load = () => {
+      setLoading(true);
+      const localProducts = products.map((p, index) => ({
+        ...p,
+        _id: p._id || String(index + 1),
+      }));
+      const p = localProducts.find((x) => x.slug === slug);
+      if (p) {
+        setProduct(p);
+        addRecentlyViewed(p);
+        const rel = localProducts.filter((x) => x.category === p.category && x.slug !== slug).slice(0, 4);
+        setRelated(rel);
+      } else {
         setProduct(null);
         setRelated([]);
-      } finally {
-        setLoading(false);
       }
+      setLoading(false);
     };
     load();
   }, [slug, addRecentlyViewed]);

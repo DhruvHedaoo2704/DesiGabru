@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { FiPackage } from 'react-icons/fi';
 import SEO from '../components/SEO';
 import { getBundles } from '../services/api';
-import { dummyProducts } from '../utils/dummyData';
 import { normalizeProducts } from '../utils/normalizeProducts';
 import { useCartStore } from '../store/useCartStore';
 import { useUIStore } from '../store/useUIStore';
