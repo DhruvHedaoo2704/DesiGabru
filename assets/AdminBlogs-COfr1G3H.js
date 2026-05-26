@@ -1,0 +1,1 @@
+import{K as e}from"./index-koLjBSk0.js";function s(){return e.jsxs("div",{children:[e.jsx("h1",{className:"text-3xl font-bold mb-4",style:{fontFamily:"Orbitron"},children:"Blog Management"}),e.jsx("p",{className:"text-gray-400",children:"Use POST /api/blogs with admin token to create articles. Seed data includes sample blogs."})]})}export{s as default};
