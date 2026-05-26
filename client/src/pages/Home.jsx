@@ -12,6 +12,50 @@ import { testimonials } from '../data/staticData.js';
 import { normalizeProducts } from '../utils/normalizeProducts';
 import ProductCarousel from '../components/ProductCarousel';
 
+const heroSlides = [
+  {
+    tagline: "✦ The New Era of Desii Attitude ✦",
+    title: "For the Man Who Bends the Rules",
+    description: "Formulated exclusively for the modern Desi icon. Cyber-luxury matte aesthetics meet gold-standard organic nourishment. Cleanse, stylize, and conquer.",
+    actionText: "Shop Collection",
+    actionLink: "/products",
+    show3D: true
+  },
+  {
+    tagline: "✦ Luxury Fine Fragrances ✦",
+    title: "Unleash Your Dominant Aura",
+    description: "Discover premium cologne formulas with deep woody notes and long-lasting projection. Engineered to make a statement that lingers all night.",
+    actionText: "Explore Scents",
+    actionLink: "/products?category=perfume",
+    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80&auto=format&fit=crop"
+  },
+  {
+    tagline: "✦ Engineered Style Combos ✦",
+    title: "Sculpt Your Ultimate Ritual",
+    description: "Get high-performance beard growth oils, de-tan face pack packs, and matte hair waxes matched into curated, cost-saving bundles.",
+    actionText: "Grab Bundle",
+    actionLink: "/bundles",
+    image: "https://images.unsplash.com/photo-1626015713026-d837d172406f?w=800&q=80&auto=format&fit=crop"
+  }
+];
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12 }
+  }
+};
+
+const textFadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { type: 'spring', stiffness: 100, damping: 15 }
+  }
+};
+
 function Countdown() {
   const [time, setTime] = useState({ h: 12, m: 45, s: 30 });
   useEffect(() => {
@@ -45,6 +89,8 @@ export default function Home() {
   const [trending, setTrending] = useState([]);
   const [featured, setFeatured] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [slideIdx, setSlideIdx] = useState(0);
+  const [direction, setDirection] = useState(0);
 
   useEffect(() => {
     const load = async () => {
@@ -64,6 +110,24 @@ export default function Home() {
     load();
   }, []);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDirection(1);
+      setSlideIdx((prev) => (prev + 1) % heroSlides.length);
+    }, 6500);
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleNext = () => {
+    setDirection(1);
+    setSlideIdx((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const handlePrev = () => {
+    setDirection(-1);
+    setSlideIdx((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
   return (
     <>
       <SEO title="Home" description="Premium cyber-luxury men's grooming" />
@@ -74,80 +138,124 @@ export default function Home() {
         
         <Particles count={50} />
         
-        <div className="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 py-20 w-full">
-          <motion.div 
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { 
-                opacity: 1,
-                transition: { staggerChildren: 0.15, delayChildren: 0.1 }
-              }
-            }}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col justify-center"
-          >
-            <motion.p 
+        <div className="max-w-7xl mx-auto px-4 md:px-6 w-full relative z-10 py-16">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={slideIdx}
+              custom={direction}
               variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0 }
+                enter: (dir) => ({
+                  x: dir > 0 ? 100 : -100,
+                  opacity: 0
+                }),
+                center: {
+                  x: 0,
+                  opacity: 1,
+                  transition: { duration: 0.5, ease: 'easeInOut' }
+                },
+                exit: (dir) => ({
+                  x: dir < 0 ? 100 : -100,
+                  opacity: 0,
+                  transition: { duration: 0.4, ease: 'easeInOut' }
+                })
               }}
-              className="text-[#D4AF37] text-xs font-bold tracking-[0.4em] uppercase mb-4"
+              initial="enter"
+              animate="center"
+              exit="exit"
+              className="grid lg:grid-cols-2 gap-12 items-center w-full min-h-[50vh]"
             >
-              ✦ The New Era of Desii Attitude ✦
-            </motion.p>
-            
-            <motion.h1 
-              variants={{
-                hidden: { opacity: 0, y: 25 },
-                visible: { opacity: 1, y: 0 }
-              }}
-              className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6" 
-              style={{ fontFamily: 'Orbitron' }}
-            >
-              For the Man Who <br className="hidden md:inline" />
-              <span className="text-gradient-gold block drop-shadow-[0_4px_12px_rgba(212,175,55,0.15)]">Bends the Rules</span>
-            </motion.h1>
-            
-            <motion.p 
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 }
-              }}
-              className="text-gray-400 text-lg mb-8 max-w-lg leading-relaxed"
-            >
-              Formulated exclusively for the modern Desi icon. Cyber-luxury matte aesthetics meet gold-standard organic nourishment. Cleanse, stylize, and conquer.
-            </motion.p>
-            
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0 }
-              }}
-              className="flex flex-wrap gap-4"
-            >
-              <Link to="/products" className="btn-primary flex items-center gap-2 group shadow-lg shadow-[#D4AF37]/10 hover:shadow-[#D4AF37]/20 transition-all">
-                Shop Collection 
-                <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to="/bundles" className="btn-outline hover:bg-white/5 transition-all">
-                View Bundles
-              </Link>
+              <motion.div 
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col justify-center"
+              >
+                <motion.p variants={textFadeUp} className="text-[#D4AF37] text-xs font-bold tracking-[0.4em] uppercase mb-4">
+                  {heroSlides[slideIdx].tagline}
+                </motion.p>
+                <motion.h1 
+                  variants={textFadeUp} 
+                  className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6" 
+                  style={{ fontFamily: 'Orbitron' }}
+                >
+                  {heroSlides[slideIdx].title}
+                </motion.h1>
+                <motion.p variants={textFadeUp} className="text-gray-400 text-lg mb-8 max-w-lg leading-relaxed">
+                  {heroSlides[slideIdx].description}
+                </motion.p>
+                <motion.div variants={textFadeUp} className="flex flex-wrap gap-4">
+                  <Link to={heroSlides[slideIdx].actionLink} className="btn-primary flex items-center gap-2 group shadow-lg shadow-[#D4AF37]/10 hover:shadow-[#D4AF37]/20 transition-all">
+                    {heroSlides[slideIdx].actionText}
+                    <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link to="/bundles" className="btn-outline hover:bg-white/5 transition-all">
+                    View Bundles
+                  </Link>
+                </motion.div>
+              </motion.div>
+              
+              <div className="relative flex items-center justify-center h-[350px] md:h-[450px]">
+                {/* Glowing Aura Ring behind slide item */}
+                <div className="absolute w-[320px] h-[320px] rounded-full border border-[#D4AF37]/10 bg-[#D4AF37]/2 blur-[60px] animate-pulse-slow pointer-events-none" />
+                
+                {heroSlides[slideIdx].show3D ? (
+                  <div className="w-full relative z-10 h-full">
+                    <Hero3D />
+                  </div>
+                ) : (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9, y: 15 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ type: 'spring', stiffness: 80, damping: 15 }}
+                    className="relative z-10 rounded-3xl overflow-hidden glass p-4 max-w-md w-full shadow-2xl border border-white/10 group"
+                  >
+                    <img 
+                      src={heroSlides[slideIdx].image} 
+                      alt="Desii Gabru Premium Lineup" 
+                      className="w-full h-[280px] md:h-[340px] object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700 ease-out" 
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = 'https://images.unsplash.com/photo-1616390323981-fd529c7d7f9a?w=800&q=80&auto=format&fit=crop';
+                      }}
+                    />
+                  </motion.div>
+                )}
+              </div>
             </motion.div>
-          </motion.div>
+          </AnimatePresence>
           
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.85, rotate: -5 }} 
-            animate={{ opacity: 1, scale: 1, rotate: 0 }} 
-            transition={{ type: 'spring', stiffness: 60, damping: 15, delay: 0.4 }}
-            className="relative flex items-center justify-center"
-          >
-            {/* Glowing Aura Ring behind Bottle */}
-            <div className="absolute w-[320px] h-[320px] rounded-full border border-[#D4AF37]/10 bg-[#D4AF37]/2 blur-[60px] animate-pulse-slow pointer-events-none" />
-            <div className="w-full relative z-10">
-              <Hero3D />
+          {/* Slideshow Controls */}
+          <div className="flex justify-between items-center mt-8 relative z-20">
+            <div className="flex gap-2">
+              {heroSlides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => {
+                    setDirection(i > slideIdx ? 1 : -1);
+                    setSlideIdx(i);
+                  }}
+                  className={`w-3.5 h-3.5 rounded-full transition-all duration-300 border border-[#D4AF37]/20 ${
+                    slideIdx === i ? 'bg-[#D4AF37] w-10 shadow-lg shadow-[#D4AF37]/20' : 'bg-white/10 hover:bg-white/30'
+                  }`}
+                />
+              ))}
             </div>
-          </motion.div>
+            
+            <div className="flex gap-4">
+              <button 
+                onClick={handlePrev} 
+                className="w-12 h-12 rounded-full border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 flex items-center justify-center text-gray-400 hover:text-[#D4AF37] hover:bg-white/5 transition-all text-xl font-bold glass"
+              >
+                ‹
+              </button>
+              <button 
+                onClick={handleNext} 
+                className="w-12 h-12 rounded-full border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 flex items-center justify-center text-gray-400 hover:text-[#D4AF37] hover:bg-white/5 transition-all text-xl font-bold glass"
+              >
+                ›
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
