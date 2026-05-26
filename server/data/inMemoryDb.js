@@ -581,12 +581,16 @@ class MockQuery {
         const includes = fields.filter(f => !f.startsWith('-') && f !== '');
         const excludes = fields.filter(f => f.startsWith('-')).map(f => f.slice(1));
         
-        if (includes.length > 0) {
-          const projected = { _id: doc._id };
-          includes.forEach(f => {
-            if (doc[f] !== undefined) projected[f] = doc[f];
+        // Handle plus prefixes like '+password' without wiping other fields
+        const hasPlus = includes.some(f => f.startsWith('+'));
+        
+        if (includes.length > 0 && !hasPlus) {
+          // Standard selection: keep only selected fields (retaining MockDocument wrapper)
+          Object.keys(doc).forEach(key => {
+            if (key !== '_id' && !includes.includes(key)) {
+              delete doc[key];
+            }
           });
-          return projected;
         } else if (excludes.length > 0) {
           excludes.forEach(f => {
             delete doc[f];

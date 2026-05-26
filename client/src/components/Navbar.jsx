@@ -26,11 +26,13 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [dropdown, setDropdown] = useState(null);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const navigate = useNavigate();
   const openCart = useCartStore((s) => s.openCart);
   const itemCount = useCartStore((s) => s.getItemCount());
   const user = useAuthStore((s) => s.user);
+  const logout = useAuthStore((s) => s.logout);
   const theme = useUIStore((s) => s.theme);
   const toggleTheme = useUIStore((s) => s.toggleTheme);
 
@@ -98,12 +100,58 @@ export default function Navbar() {
           <button onClick={toggleTheme} className="p-2 hover:text-[#D4AF37]">
             {theme === 'dark' ? <FiSun /> : <FiMoon />}
           </button>
-          <Link
-            to={user ? '/dashboard' : '/login'}
-            className="p-2 hover:text-[#D4AF37] hidden sm:block"
-          >
-            <FiUser />
-          </Link>
+          {user ? (
+            <div 
+              className="relative hidden sm:block"
+              onMouseEnter={() => setProfileOpen(true)}
+              onMouseLeave={() => setProfileOpen(false)}
+            >
+              <button className="p-2 hover:text-[#D4AF37] flex items-center gap-1.5 cursor-pointer">
+                <FiUser />
+                {user.avatar ? (
+                  <img src={user.avatar} className="w-5 h-5 rounded-full object-cover border border-[#D4AF37]/20" />
+                ) : null}
+              </button>
+              <AnimatePresence>
+                {profileOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute right-0 mt-2 glass rounded-xl p-3 min-w-[160px] shadow-xl z-50 flex flex-col gap-1"
+                  >
+                    <div className="px-3 py-1.5 text-xs text-gray-400 border-b border-white/5 mb-1 font-semibold truncate">
+                      {user.name}
+                    </div>
+                    <Link
+                      to={user.role === 'admin' ? '/admin/dashboard' : '/dashboard'}
+                      className="px-3 py-2 text-sm hover:text-[#D4AF37] rounded-lg hover:bg-white/5 text-left block"
+                      onClick={() => setProfileOpen(false)}
+                    >
+                      {user.role === 'admin' ? 'Admin Panel' : 'Dashboard'}
+                    </Link>
+                    <button
+                      onClick={() => {
+                        logout();
+                        setProfileOpen(false);
+                        navigate('/');
+                      }}
+                      className="w-full px-3 py-2 text-sm text-red-400 hover:text-red-300 hover:bg-red-500/5 rounded-lg text-left cursor-pointer"
+                    >
+                      Logout
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ) : (
+            <Link
+              to="/login"
+              className="p-2 hover:text-[#D4AF37] hidden sm:block"
+            >
+              <FiUser />
+            </Link>
+          )}
           <button onClick={openCart} className="p-2 hover:text-[#D4AF37] relative">
             <FiShoppingBag />
             {itemCount > 0 && (
@@ -166,9 +214,32 @@ export default function Navbar() {
                   {l.label}
                 </Link>
               ))}
-              <Link to={user ? '/dashboard' : '/login'} onClick={() => setOpen(false)}>
-                Account
-              </Link>
+              {user ? (
+                <>
+                  <Link to="/dashboard" onClick={() => setOpen(false)} className="py-2 hover:text-[#D4AF37]">
+                    Dashboard
+                  </Link>
+                  {user.role === 'admin' && (
+                    <Link to="/admin/dashboard" onClick={() => setOpen(false)} className="py-2 hover:text-[#D4AF37]">
+                      Admin Panel
+                    </Link>
+                  )}
+                  <button
+                    onClick={() => {
+                      logout();
+                      setOpen(false);
+                      navigate('/');
+                    }}
+                    className="py-2 text-red-400 hover:text-red-300 text-left cursor-pointer font-medium"
+                  >
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <Link to="/login" onClick={() => setOpen(false)} className="py-2 hover:text-[#D4AF37]">
+                  Account
+                </Link>
+              )}
             </div>
           </motion.div>
         )}

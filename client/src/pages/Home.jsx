@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
 import SEO from '../components/SEO';
 import Hero3D from '../components/Hero3D';
+import HeroBackground3D from '../components/HeroBackground3D';
 import Particles from '../components/Particles';
 import ProductCard from '../components/ProductCard';
 import { ProductSkeleton } from '../components/Skeleton';
@@ -12,6 +13,7 @@ import { testimonials } from '../data/staticData.js';
 import { normalizeProducts } from '../utils/normalizeProducts';
 import ProductCarousel from '../components/ProductCarousel';
 import slidePerfumeImg from './image.png';
+import rajeev from './image1.png'
 
 const heroSlides = [
   {
@@ -36,7 +38,7 @@ const heroSlides = [
     description: "Get high-performance beard growth oils, de-tan face pack packs, and matte hair waxes matched into curated, cost-saving bundles.",
     actionText: "Grab Bundle",
     actionLink: "/bundles",
-    image: "https://images.unsplash.com/photo-1626015713026-d837d172406f?w=800&q=80&auto=format&fit=crop"
+    image: rajeev
   }
 ];
 
@@ -137,7 +139,7 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-[#D4AF37]/5 via-[#B87333]/1 to-transparent rounded-full blur-[120px] pointer-events-none z-0" />
         <div className="absolute right-[-10%] top-[-10%] w-[500px] h-[500px] bg-[#D4AF37]/5 rounded-full blur-[150px] pointer-events-none z-0 animate-pulse-slow" />
         
-        <Particles count={50} />
+        <HeroBackground3D />
         
         <div className="max-w-7xl mx-auto px-4 md:px-6 w-full relative z-10 py-16">
           <AnimatePresence mode="wait" custom={direction}>
@@ -213,7 +215,7 @@ export default function Home() {
                     <img 
                       src={heroSlides[slideIdx].image} 
                       alt="Desii Gabru Premium Lineup" 
-                      className="w-full h-[280px] md:h-[340px] object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700 ease-out" 
+                      className="w-full h-[280px] md:h-[340px] object-contain rounded-2xl group-hover:scale-105 transition-transform duration-700 ease-out" 
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = 'https://images.unsplash.com/photo-1616390323981-fd529c7d7f9a?w=800&q=80&auto=format&fit=crop';
