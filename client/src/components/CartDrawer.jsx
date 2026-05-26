@@ -4,8 +4,18 @@ import { FiX, FiMinus, FiPlus, FiShoppingBag } from 'react-icons/fi';
 import { useCartStore } from '../store/useCartStore';
 
 export default function CartDrawer() {
-  const { items, isOpen, closeCart, updateQuantity, removeItem, getSubtotal, getShippingProgress, getTotal } =
-    useCartStore();
+  const { 
+    items, 
+    isOpen, 
+    closeCart, 
+    updateQuantity, 
+    removeItem, 
+    getSubtotal, 
+    getShippingProgress, 
+    getTotal,
+    getShipping,
+    getDiscount
+  } = useCartStore();
 
   return (
     <AnimatePresence>
@@ -92,13 +102,34 @@ export default function CartDrawer() {
                     <span>Free shipping at ₹999</span>
                     <span>{Math.round(getShippingProgress())}%</span>
                   </div>
-                  <div className="h-1.5 bg-[#111] rounded-full overflow-hidden">
+                  <div className="h-1.5 bg-[#111] rounded-full overflow-hidden border border-[#D4AF37]/10">
                     <div
                       className="h-full bg-gradient-to-r from-[#D4AF37] to-[#B87333] transition-all"
                       style={{ width: `${getShippingProgress()}%` }}
                     />
                   </div>
                 </div>
+
+                <div className="space-y-1.5 text-xs text-gray-400 border-b border-[#D4AF37]/10 pb-3">
+                  <div className="flex justify-between">
+                    <span>Subtotal</span>
+                    <span className="text-text-main font-semibold">₹{getSubtotal()}</span>
+                  </div>
+                  {getDiscount() > 0 && (
+                    <div className="flex justify-between text-green-400">
+                      <span>Discount</span>
+                      <span>-₹{getDiscount()}</span>
+                    </div>
+                  )}
+                  <div className="flex justify-between">
+                    <span>Shipping Fee</span>
+                    <span className="text-text-main font-semibold">
+                      {getShipping() === 0 ? 'FREE' : `₹${getShipping()}`}
+                    </span>
+                  </div>
+
+                </div>
+
                 <div className="flex justify-between font-bold">
                   <span>Total</span>
                   <span className="text-[#D4AF37]">₹{getTotal()}</span>

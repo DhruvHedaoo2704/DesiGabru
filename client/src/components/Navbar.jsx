@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   FiShoppingBag,
@@ -16,7 +16,7 @@ import { useAuthStore } from '../store/useAuthStore';
 import { useUIStore } from '../store/useUIStore';
 
 const navLinks = [
-  { to: '/products', label: 'Shop', children: ['Beard', 'Face', 'Hair'] },
+  { to: '/products', label: 'Shop', children: ['Beard', 'Face', 'Hair', 'perfume'] },
   { to: '/bundles', label: 'Bundles' },
   { to: '/blog', label: 'Blog' },
   { to: '/contact', label: 'Contact' },
@@ -26,11 +26,20 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [dropdown, setDropdown] = useState(null);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+  const navigate = useNavigate();
   const openCart = useCartStore((s) => s.openCart);
   const itemCount = useCartStore((s) => s.getItemCount());
   const user = useAuthStore((s) => s.user);
   const theme = useUIStore((s) => s.theme);
   const toggleTheme = useUIStore((s) => s.toggleTheme);
+
+  const handleSearchSubmit = () => {
+    if (searchValue.trim()) {
+      navigate(`/products?keyword=${encodeURIComponent(searchValue.trim())}`);
+      setSearchOpen(false);
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-[#D4AF37]/10">
@@ -86,9 +95,6 @@ export default function Navbar() {
           <button onClick={() => setSearchOpen(!searchOpen)} className="p-2 hover:text-[#D4AF37] hidden sm:block">
             <FiSearch />
           </button>
-          <button className="p-2 hover:text-[#D4AF37] hidden sm:block" title="Voice search">
-            <FiMic />
-          </button>
           <button onClick={toggleTheme} className="p-2 hover:text-[#D4AF37]">
             {theme === 'dark' ? <FiSun /> : <FiMoon />}
           </button>
@@ -120,16 +126,28 @@ export default function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             className="border-t border-[#D4AF37]/10 px-4 py-3"
           >
-            <input
-              type="search"
-              placeholder="Search products..."
-              className="input-field max-w-xl mx-auto"
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  window.location.href = `/products?keyword=${e.target.value}`;
-                }
-              }}
-            />
+            <div className="max-w-xl mx-auto flex gap-2 relative">
+              <input
+                type="search"
+                placeholder="Search products..."
+                autoFocus
+                className="input-field pr-12"
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    handleSearchSubmit();
+                  }
+                }}
+              />
+              <button 
+                onClick={handleSearchSubmit} 
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#D4AF37] p-2 transition-colors cursor-pointer"
+                title="Search"
+              >
+                <FiSearch size={18} />
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

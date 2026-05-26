@@ -10,6 +10,7 @@ import { ProductSkeleton } from '../components/Skeleton';
 import { getTrending, getFeatured } from '../services/api';
 import { testimonials } from '../data/staticData.js';
 import { normalizeProducts } from '../utils/normalizeProducts';
+import ProductCarousel from '../components/ProductCarousel';
 
 function Countdown() {
   const [time, setTime] = useState({ h: 12, m: 45, s: 30 });
@@ -98,11 +99,7 @@ export default function Home() {
           </h2>
           <p className="text-gray-400">What the tribe is rocking</p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {loading
-            ? [...Array(4)].map((_, i) => <ProductSkeleton key={i} />)
-            : trending.slice(0, 4).map((p) => <ProductCard key={p._id} product={p} />)}
-        </div>
+        <ProductCarousel products={trending} loading={loading} />
       </section>
 
       <section className="py-16 glass mx-4 md:mx-6 rounded-3xl max-w-7xl lg:mx-auto mb-20">
@@ -120,11 +117,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-center mb-12" style={{ fontFamily: 'Orbitron' }}>
           Featured <span className="text-gradient-gold">Elite</span>
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {featured.slice(0, 4).map((p) => (
-            <ProductCard key={p._id} product={p} />
-          ))}
-        </div>
+        <ProductCarousel products={featured} loading={loading} />
       </section>
 
       <section className="py-20 px-4 md:px-6 max-w-7xl mx-auto">

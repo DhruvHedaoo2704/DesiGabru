@@ -163,7 +163,7 @@ export default function Checkout() {
               <div className="flex justify-between text-sm"><span>Subtotal</span><span>₹{getSubtotal()}</span></div>
               <div className="flex justify-between text-sm"><span>Discount</span><span>-₹{getDiscount()}</span></div>
               <div className="flex justify-between text-sm"><span>Shipping</span><span>₹{getShipping()}</span></div>
-              <div className="flex justify-between text-sm"><span>Tax (18%)</span><span>₹{Math.round((getSubtotal() - getDiscount()) * 0.18)}</span></div>
+
               <div className="flex justify-between font-bold text-lg border-t border-[#D4AF37]/20 pt-3">
                 <span>Total</span>
                 <span className="text-[#D4AF37]">₹{getTotal()}</span>

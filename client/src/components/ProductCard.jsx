@@ -7,8 +7,10 @@ import { useUIStore } from '../store/useUIStore';
 export default function ProductCard({ product }) {
   const addItem = useCartStore((s) => s.addItem);
   const toggleWishlist = useUIStore((s) => s.toggleWishlist);
-  const isWishlisted = useUIStore((s) => s.isWishlisted);
+  const wishlist = useUIStore((s) => s.wishlist);
   const addToast = useUIStore((s) => s.addToast);
+
+  const isWishlisted = wishlist.includes(product._id);
 
   const discount =
     product.comparePrice > product.price
@@ -28,11 +30,11 @@ export default function ProductCard({ product }) {
       <button
         onClick={() => {
           toggleWishlist(product._id);
-          addToast(isWishlisted(product._id) ? 'Removed from wishlist' : 'Added to wishlist');
+          addToast(isWishlisted ? 'Removed from wishlist' : 'Added to wishlist');
         }}
         className="absolute top-3 right-3 z-10 p-2 rounded-full glass hover:text-[#D4AF37] transition-colors"
       >
-        <FiHeart className={isWishlisted(product._id) ? 'fill-[#D4AF37] text-[#D4AF37]' : ''} />
+        <FiHeart className={isWishlisted ? 'fill-[#D4AF37] text-[#D4AF37]' : ''} />
       </button>
 
       <Link to={`/product/${product.slug}`} className="block">

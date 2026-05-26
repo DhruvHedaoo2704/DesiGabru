@@ -23,7 +23,7 @@ export default function MainLayout() {
   }, [theme]);
 
   return (
-    <div className={`min-h-screen ${theme === 'light' ? 'light bg-gray-100' : 'bg-[#050505]'}`}>
+    <div className={`min-h-screen ${theme === 'light' ? 'light' : ''} bg-bg-primary`}>
       <Navbar />
       <CartDrawer />
       <Toast />

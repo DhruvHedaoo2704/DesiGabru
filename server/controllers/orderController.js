@@ -1,7 +1,7 @@
 import Order from '../models/Order.js';
 import Product from '../models/Product.js';
 
-const TAX_RATE = 0.18;
+const TAX_RATE = 0;
 const FREE_SHIPPING_THRESHOLD = 999;
 
 export const createOrder = async (req, res) => {

@@ -23,18 +23,19 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-[#D4AF37] mb-4">Shop</h4>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><Link to="/products?category=beard" className="hover:text-white">Beard Care</Link></li>
-            <li><Link to="/products?category=face" className="hover:text-white">Face Care</Link></li>
-            <li><Link to="/products?category=hair" className="hover:text-white">Hair Styling</Link></li>
-            <li><Link to="/bundles" className="hover:text-white">Bundles</Link></li>
+            <li><Link to="/products?category=beard" className="hover:text-[#D4AF37]">Beard Care</Link></li>
+            <li><Link to="/products?category=face" className="hover:text-[#D4AF37]">Face Care</Link></li>
+            <li><Link to="/products?category=hair" className="hover:text-[#D4AF37]">Hair Styling</Link></li>
+            <li><Link to="/products?category=perfume" className="hover:text-[#D4AF37]">Perfume</Link></li>
+            <li><Link to="/bundles" className="hover:text-[#D4AF37]">Bundles</Link></li>
           </ul>
         </div>
         <div>
           <h4 className="font-semibold text-[#D4AF37] mb-4">Support</h4>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><Link to="/blog" className="hover:text-white">Blog & FAQ</Link></li>
-            <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
-            <li><Link to="/dashboard" className="hover:text-white">Track Order</Link></li>
+            <li><Link to="/blog" className="hover:text-[#D4AF37]">Blog & FAQ</Link></li>
+            <li><Link to="/contact" className="hover:text-[#D4AF37]">Contact</Link></li>
+            <li><Link to="/dashboard" className="hover:text-[#D4AF37]">Track Order</Link></li>
           </ul>
         </div>
         <div>

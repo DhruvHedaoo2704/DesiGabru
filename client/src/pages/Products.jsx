@@ -7,13 +7,13 @@ import { ProductSkeleton } from '../components/Skeleton';
 import { getProducts } from '../services/api';
 import { normalizeProducts } from '../utils/normalizeProducts';
 
-const categories = ['all', 'beard', 'face', 'hair'];
+const categories = ['all', 'beard', 'face', 'hair', 'perfume'];
 
 export default function Products() {
   const [params, setParams] = useSearchParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [priceMax, setPriceMax] = useState(3000);
+  const [priceMax, setPriceMax] = useState(1500);
   const [sort, setSort] = useState('newest');
 
   const category = params.get('category') || 'all';
@@ -23,7 +23,7 @@ export default function Products() {
     const load = async () => {
       setLoading(true);
       try {
-        const query = {};
+        const query = { limit: 1000 };
         if (category !== 'all') query.category = category;
         if (keyword) query.keyword = keyword;
         const { data } = await getProducts(query);
@@ -83,7 +83,7 @@ export default function Products() {
                 <input
                   type="range"
                   min="200"
-                  max="3000"
+                  max="1500"
                   value={priceMax}
                   onChange={(e) => setPriceMax(Number(e.target.value))}
                   className="w-full accent-[#D4AF37]"

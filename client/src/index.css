@@ -1,11 +1,56 @@
 @import "tailwindcss";
 
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #111111;
+  --text-main: #F5F5F5;
+  --text-sub: #D1D5DB; /* gray-300 */
+  --text-muted: #9CA3AF; /* gray-400 */
+  --gold: #D4AF37;
+  --copper: #B87333;
+  --border-color: rgba(212, 175, 55, 0.15);
+  --glass-bg: rgba(17, 17, 17, 0.6);
+  --glass-border: rgba(212, 175, 55, 0.2);
+  --glass-hover: rgba(212, 175, 55, 0.1);
+  --input-bg: rgba(17, 17, 17, 0.8);
+  --shadow-color: rgba(212, 175, 55, 0.25);
+  --btn-gold-hover: rgba(212, 175, 55, 0.5);
+  --btn-outline-hover: rgba(212, 175, 55, 0.1);
+  --card-img-bg: #111;
+  --skeleton-bg: #1a1a1a;
+  --scroll-track: #111;
+}
+
+.light {
+  /* Ultra-Premium Light Luxury Theme: Warm Alabaster, Matte White, Champagne & Rich Bronze Gold, Soft Obsidian */
+  --bg-primary: #FDFCF7; /* Luminous soft warm alabaster white */
+  --bg-secondary: #FFFFFF; /* Crisp luxurious white for content cards & drawers */
+  --text-main: #1D1A16; /* Sophisticated warm black / dark cocoa bean */
+  --text-sub: #544F49; /* Rich dark charcoal/warm slate */
+  --text-muted: #8E857C; /* Elegant soft beige-gray */
+  --gold: #C5A030; /* Refined polished gold with higher contrast for light background */
+  --copper: #A76229; /* Slightly deeper luxury copper bronze */
+  --border-color: rgba(197, 160, 48, 0.22);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(197, 160, 48, 0.28);
+  --glass-hover: rgba(197, 160, 48, 0.08);
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --shadow-color: rgba(197, 160, 48, 0.12);
+  --btn-gold-hover: rgba(197, 160, 48, 0.4);
+  --btn-outline-hover: rgba(197, 160, 48, 0.08);
+  --card-img-bg: #F7F5F0; /* Soft warm gray background for product images */
+  --skeleton-bg: #EFECE6; /* Light luxury bone-gray for skeleton cards */
+  --scroll-track: #FAF9F6;
+}
+
 @theme {
-  --color-bg-primary: #050505;
-  --color-bg-secondary: #111111;
-  --color-gold: #D4AF37;
-  --color-copper: #B87333;
-  --color-text: #F5F5F5;
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-gold: var(--gold);
+  --color-copper: var(--copper);
+  --color-text: var(--text-main);
+  --color-text-sub: var(--text-sub);
+  --color-text-muted: var(--text-muted);
   --font-display: "Orbitron", sans-serif;
   --font-body: "Outfit", sans-serif;
 }
@@ -21,34 +66,42 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  background: #050505;
-  color: #F5F5F5;
+  background: var(--bg-primary);
+  color: var(--text-main);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #111;
+  background: var(--scroll-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #D4AF37, #B87333);
+  background: linear-gradient(180deg, var(--gold), var(--copper));
   border-radius: 4px;
 }
 
 .glass {
-  background: rgba(17, 17, 17, 0.6);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid var(--glass-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .glow-gold {
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 0 30px var(--shadow-color);
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #D4AF37, #B87333, #F5E6A3);
+  background: linear-gradient(135deg, var(--gold), var(--copper), #F5E6A3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.light .text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold), var(--copper), #EAD49A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -56,37 +109,134 @@ body {
 
 .btn-primary {
   @apply px-6 py-3 rounded-full font-semibold transition-all duration-300;
-  background: linear-gradient(135deg, #D4AF37, #B87333);
+  background: linear-gradient(135deg, var(--gold), var(--copper));
   color: #050505;
 }
 .btn-primary:hover {
-  box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 40px var(--btn-gold-hover);
   transform: translateY(-2px);
 }
 
 .btn-outline {
   @apply px-6 py-3 rounded-full font-semibold border transition-all duration-300;
-  border-color: rgba(212, 175, 55, 0.5);
-  color: #D4AF37;
+  border-color: var(--glass-border);
+  color: var(--gold);
 }
 .btn-outline:hover {
-  background: rgba(212, 175, 55, 0.1);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  background: var(--btn-outline-hover);
+  box-shadow: 0 0 20px var(--shadow-color);
 }
 
 .input-field {
   @apply w-full px-4 py-3 rounded-xl outline-none transition-all;
-  background: rgba(17, 17, 17, 0.8);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  color: #F5F5F5;
+  background: var(--input-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
 }
 .input-field:focus {
-  border-color: #D4AF37;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  border-color: var(--gold);
+  box-shadow: 0 0 15px var(--shadow-color);
 }
 
-.light body,
-.light {
-  background: #f5f5f5;
-  color: #111;
+/* --- Ultra-Premium Light Mode Smart Overrides --- */
+.light body {
+  background: var(--bg-primary);
+  color: var(--text-main);
+}
+
+/* Hardcoded dark background containers automatically shift to white */
+.light .bg-\[\#111\],
+.light .bg-\[\#111111\] {
+  background-color: var(--bg-secondary) !important;
+}
+
+.light .bg-\[\#050505\] {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Skeletons automatically match light luxury tone */
+.light .bg-\[\#1a1a1a\] {
+  background-color: var(--skeleton-bg) !important;
+}
+
+/* Standard text color overrides for extreme contrast & luxury feel */
+/* We target text-white but NOT inside primary buttons, gradients, tags, etc. */
+.light .text-white:not(.btn-primary *, .btn-primary, .btn-outline *, .btn-outline, .bg-gradient-to-r *, .bg-gradient-to-r, .bg-\[\#D4AF37\] *, .bg-\[\#D4AF37\], [class*="bg-gradient"]) {
+  color: var(--text-main) !important;
+}
+
+.light .text-gray-300 {
+  color: var(--text-sub) !important;
+}
+
+.light .text-gray-400 {
+  color: var(--text-muted) !important;
+}
+
+.light .text-gray-500 {
+  color: var(--text-muted) !important;
+}
+
+/* Make sure active dropdown items inside Navbar are readable */
+.light .hover\:bg-white\/5:hover {
+  background-color: rgba(197, 160, 48, 0.08) !important;
+}
+
+/* Light image cards should have a premium soft warm background */
+.light .bg-\[\#111\]:has(img) {
+  background-color: var(--card-img-bg) !important;
+}
+.light .aspect-square.bg-\[\#111\] {
+  background-color: var(--card-img-bg) !important;
+}
+
+/* Shimmering glass hover effects */
+.light .glass.hover\:bg-white\/5:hover {
+  background-color: var(--glass-hover) !important;
+}
+
+/* Forms & Borders */
+.light .border-white\/10,
+.light .border-\[\#D4AF37\]\/10,
+.light .border-\%5BD4AF37\%5D\/10,
+.light .border-\[\#D4AF37\]\/20,
+.light .border-\%5BD4AF37\%5D\/20 {
+  border-color: var(--border-color) !important;
+}
+
+/* Adjust dark overlays so product images remain visible and clear in light mode */
+.light .bg-black\/70,
+.light .bg-black\/50 {
+  background-color: rgba(29, 26, 22, 0.4) !important; /* Elegant warm dimming overlay */
+}
+
+/* Ensure the category tab active state and other highlights look premium */
+.light .bg-\[\#D4AF37\]\/20 {
+  background-color: rgba(197, 160, 48, 0.15) !important;
+}
+
+/* Tab borders active color */
+.light .border-b-2.border-\[\#D4AF37\] {
+  border-color: var(--gold) !important;
+}
+
+/* Dashboard & user badges */
+.light .text-green-400 {
+  color: #15803d !important; /* Green-700 for better light mode contrast */
+}
+.light .bg-green-500\/20 {
+  background-color: #dcfce7 !important; /* Light green background */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-none::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-none,
+.no-scrollbar {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
 }

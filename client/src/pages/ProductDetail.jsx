@@ -18,6 +18,9 @@ export default function ProductDetail() {
   const [qty, setQty] = useState(1);
   const [tab, setTab] = useState(0);
   const [loading, setLoading] = useState(true);
+  const productTabs = product?.isBundle 
+    ? ['Description', 'Product Details', 'Products Included', 'Reviews']
+    : ['Description', 'Product Details', 'Ingredients', 'Reviews', 'Usage Guide'];
   const [activeImgIdx, setActiveImgIdx] = useState(0);
   const addItem = useCartStore((s) => s.addItem);
   const addToast = useUIStore((s) => s.addToast);
@@ -138,7 +141,7 @@ export default function ProductDetail() {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
             <span className="absolute bottom-4 left-4 text-xs glass px-3 py-1 rounded-full">
-              3D Viewer — drag to rotate (coming soon)
+              3D Viewer drag to rotate (coming soon)
             </span>
           </motion.div>
 
@@ -184,7 +187,7 @@ export default function ProductDetail() {
             </Link>
 
             <div className="flex gap-2 border-b border-[#D4AF37]/20 mb-4 overflow-x-auto">
-              {tabs.map((t, i) => (
+              {productTabs.map((t, i) => (
                 <button
                   key={t}
                   onClick={() => setTab(i)}
@@ -234,11 +237,37 @@ export default function ProductDetail() {
                 </div>
               )}
               {tab === 2 && (
-                <ul className="list-disc pl-5 space-y-1">
-                  {(product?.ingredients || ['Premium botanical blend']).map((ing) => (
-                    <li key={ing}>{ing}</li>
-                  ))}
-                </ul>
+                product?.isBundle ? (
+                  <div className="grid gap-3">
+                    {(product?.bundleItems || []).map((item) => (
+                      <Link
+                        key={item._id}
+                        to={`/product/${item.slug}`}
+                        className="flex items-center gap-4 glass p-3 rounded-xl hover:border-gold/50 hover:scale-[1.01] transition-all group"
+                      >
+                        <img
+                          src={item.images?.[0] || 'https://images.unsplash.com/photo-1616390323981-fd529c7d7f9a?w=800&q=80&auto=format&fit=crop'}
+                          alt={item.name}
+                          className="w-16 h-16 object-cover rounded-lg shrink-0"
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = 'https://images.unsplash.com/photo-1616390323981-fd529c7d7f9a?w=800&q=80&auto=format&fit=crop';
+                          }}
+                        />
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-sm group-hover:text-gold transition-colors">{item.name}</h4>
+                          <p className="text-gold font-bold text-xs mt-1">₹{item.price}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <ul className="list-disc pl-5 space-y-1">
+                    {(product?.ingredients || ['Premium botanical blend']).map((ing) => (
+                      <li key={ing}>{ing}</li>
+                    ))}
+                  </ul>
+                )
               )}
               {tab === 3 && <p>Reviews coming soon. Be the first to review!</p>}
               {tab === 4 && <p>{product?.usageGuide || 'Apply as directed for best results.'}</p>}

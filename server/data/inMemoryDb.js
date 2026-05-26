@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import bcrypt from 'bcryptjs';
-import { products as initialProducts, categories as initialCategories, blogs as initialBlogs, coupons as initialCoupons } from './products.js';
+import { products as initialProducts, categories as initialCategories, blogs as initialBlogs, coupons as initialCoupons, bundles as initialBundles } from './products.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -73,7 +73,11 @@ class InMemoryDb {
     });
 
     // 2. Sync Products
-    this.collections.products = initialProducts.map(p => {
+    const allStaticProducts = [
+      ...initialProducts,
+      ...(initialBundles || []).map(b => ({ ...b, isBundle: true }))
+    ];
+    this.collections.products = allStaticProducts.map(p => {
       const existing = this.collections.products?.find(prod => prod.slug === p.slug || prod.sku === p.sku);
       const catObj = this.collections.categories.find(c => c.slug === p.category);
       return {
@@ -91,7 +95,7 @@ class InMemoryDb {
         isFeatured: p.isFeatured || false,
         isTrending: p.isTrending || false,
         isBundle: p.isBundle || false,
-        bundleSavePercent: p.bundleSavePercent || 0,
+        bundleSavePercent: p.bundleSavePercent || (p.comparePrice && p.price ? Math.round(((p.comparePrice - p.price) / p.comparePrice) * 100) : 0),
         ratings: p.ratings || 4.5,
         numReviews: p.numReviews || 0,
         reviews: existing ? existing.reviews : [],
@@ -121,6 +125,15 @@ class InMemoryDb {
         .map((p) => p._id);
     }
 
+    // Automatically populate bundleItems for bundles with custom static 'products' slug arrays
+    createdProducts.forEach(b => {
+      if (b.isBundle && Array.isArray(b.products)) {
+        b.bundleItems = b.products
+          .map(slug => createdProducts.find(p => p.slug === slug)?._id)
+          .filter(Boolean);
+      }
+    });
+
     // 3. Sync Blogs
     const admin = this.collections.users?.find(u => u.role === 'admin');
     const adminId = admin ? admin._id : generateId();
@@ -128,6 +141,8 @@ class InMemoryDb {
       const existing = this.collections.blogs?.find(blog => blog.slug === b.slug);
       return {
         _id: existing ? existing._id : generateId(),
+        isPublished: true,
+        views: 0,
         ...b,
         author: adminId,
         createdAt: existing ? existing.createdAt : new Date(),
@@ -214,7 +229,11 @@ class InMemoryDb {
     }));
 
     // 3. Seed Products
-    this.collections.products = initialProducts.map(p => {
+    const allStaticProducts = [
+      ...initialProducts,
+      ...(initialBundles || []).map(b => ({ ...b, isBundle: true }))
+    ];
+    this.collections.products = allStaticProducts.map(p => {
       const catObj = this.collections.categories.find(c => c.slug === p.category);
       return {
         _id: generateId(),
@@ -231,7 +250,7 @@ class InMemoryDb {
         isFeatured: p.isFeatured || false,
         isTrending: p.isTrending || false,
         isBundle: p.isBundle || false,
-        bundleSavePercent: p.bundleSavePercent || 0,
+        bundleSavePercent: p.bundleSavePercent || (p.comparePrice && p.price ? Math.round(((p.comparePrice - p.price) / p.comparePrice) * 100) : 0),
         ratings: p.ratings || 4.5,
         numReviews: p.numReviews || 0,
         reviews: [],
@@ -261,9 +280,20 @@ class InMemoryDb {
         .map((p) => p._id);
     }
 
+    // Automatically populate bundleItems for bundles with custom static 'products' slug arrays
+    createdProducts.forEach(b => {
+      if (b.isBundle && Array.isArray(b.products)) {
+        b.bundleItems = b.products
+          .map(slug => createdProducts.find(p => p.slug === slug)?._id)
+          .filter(Boolean);
+      }
+    });
+
     // 4. Seed Blogs
     this.collections.blogs = initialBlogs.map(b => ({
       _id: generateId(),
+      isPublished: true,
+      views: 0,
       ...b,
       author: adminId,
       createdAt: new Date(),
