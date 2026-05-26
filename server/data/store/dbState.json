@@ -125,7 +125,7 @@
       "category": "beard",
       "price": 329,
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.499Z"
     },
     {
       "_id": "7b421ab859ff185ba2fb3a7c",
@@ -205,7 +205,7 @@
       "category": "beard",
       "price": 249,
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "9614acc4e5ee7da7d1c7e50a",
@@ -288,7 +288,7 @@
       "category": "hair",
       "price": 399,
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "7877d179b280a66e58356d73",
@@ -361,7 +361,7 @@
       "category": "hair",
       "price": 549,
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "87440214eb5f19bb4813a62a",
@@ -441,7 +441,7 @@
       "category": "hair",
       "price": 599,
       "createdAt": "2026-05-25T12:37:45.110Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "59f57ce9aeef837e8bc09d4d",
@@ -515,7 +515,7 @@
       "category": "face",
       "price": 364,
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "90c1dc81cba32a35fce673d5",
@@ -589,7 +589,7 @@
       "category": "face",
       "price": 345,
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "7bcca489189cddb79c3456f9",
@@ -663,7 +663,7 @@
       "category": "face",
       "price": 329,
       "createdAt": "2026-05-26T06:35:56.543Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "d2fdb906d5147de387d4aa52",
@@ -738,7 +738,7 @@
       "category": "face",
       "price": 345,
       "createdAt": "2026-05-26T06:56:41.580Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "a6e02b78889d73729bcce929",
@@ -813,7 +813,7 @@
       "category": "face",
       "price": 345,
       "createdAt": "2026-05-26T06:56:41.580Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "1706483f780b8f3117b14567",
@@ -876,7 +876,7 @@
       "category": "perfume",
       "price": 899,
       "createdAt": "2026-05-26T07:07:12.141Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "85eb28afb9dfae7f30fc3872",
@@ -939,7 +939,7 @@
       "category": "perfume",
       "price": 799,
       "createdAt": "2026-05-26T07:24:19.551Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "8461a957463715c5f3e0e621",
@@ -1002,7 +1002,7 @@
       "category": "perfume",
       "price": 1099,
       "createdAt": "2026-05-26T07:24:19.551Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "29ce787db9de2dc466b05833",
@@ -1067,7 +1067,7 @@
       "category": "perfume",
       "price": 799,
       "createdAt": "2026-05-26T07:31:36.638Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "5207a9e861ff19d96b7a75bb",
@@ -1100,7 +1100,7 @@
       "numReviews": 100,
       "reviews": [],
       "tags": [],
-      "sku": "DG-GEN-696",
+      "sku": "DG-GEN-969",
       "categoryRef": null,
       "name": "Ultimate Men's Grooming Set",
       "slug": "ultimate-mens-grooming-set",
@@ -1124,7 +1124,7 @@
       ],
       "price": 1449,
       "createdAt": "2026-05-26T09:59:49.770Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z",
+      "updatedAt": "2026-05-26T11:22:19.500Z",
       "bundleItems": [
         "7b421ab859ff185ba2fb3a7c",
         "59f57ce9aeef837e8bc09d4d",
@@ -1163,7 +1163,7 @@
       "numReviews": 300,
       "reviews": [],
       "tags": [],
-      "sku": "DG-GEN-921",
+      "sku": "DG-GEN-584",
       "categoryRef": null,
       "name": "BEARD OIL & BEARD SHINER COMBO",
       "slug": "beard-oil-beard-shiner-combo",
@@ -1183,7 +1183,7 @@
       ],
       "price": 549,
       "createdAt": "2026-05-26T10:28:20.195Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z",
+      "updatedAt": "2026-05-26T11:22:19.500Z",
       "bundleItems": [
         "7b421ab859ff185ba2fb3a7c",
         "5fc54d53a8cf4f774a985cfa"
@@ -1219,7 +1219,7 @@
       "numReviews": 300,
       "reviews": [],
       "tags": [],
-      "sku": "DG-GEN-572",
+      "sku": "DG-GEN-847",
       "categoryRef": null,
       "name": "FACE WASH & FACE SERUM COMBO",
       "slug": "face-wash-face-serum-combo",
@@ -1239,7 +1239,7 @@
       ],
       "price": 549,
       "createdAt": "2026-05-26T10:32:13.716Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z",
+      "updatedAt": "2026-05-26T11:22:19.500Z",
       "bundleItems": [
         "59f57ce9aeef837e8bc09d4d",
         "90c1dc81cba32a35fce673d5"
@@ -1275,7 +1275,7 @@
       "numReviews": 300,
       "reviews": [],
       "tags": [],
-      "sku": "DG-GEN-219",
+      "sku": "DG-GEN-974",
       "categoryRef": null,
       "name": "FACE WASH, BEARD SHINER & HAIR WAX",
       "slug": "face-wash-beard-shiner-hair-wax-combo",
@@ -1297,7 +1297,7 @@
       ],
       "price": 948,
       "createdAt": "2026-05-26T10:37:42.532Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z",
+      "updatedAt": "2026-05-26T11:22:19.500Z",
       "bundleItems": [
         "59f57ce9aeef837e8bc09d4d",
         "7b421ab859ff185ba2fb3a7c",
@@ -1334,7 +1334,7 @@
       "numReviews": 300,
       "reviews": [],
       "tags": [],
-      "sku": "DG-GEN-284",
+      "sku": "DG-GEN-745",
       "categoryRef": null,
       "name": "HAIR WAX & HAIR SERUM COMBO",
       "slug": "hair-wax-hair-serum-combo",
@@ -1354,7 +1354,7 @@
       ],
       "price": 899,
       "createdAt": "2026-05-26T10:40:40.262Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z",
+      "updatedAt": "2026-05-26T11:22:19.500Z",
       "bundleItems": [
         "9614acc4e5ee7da7d1c7e50a",
         "7877d179b280a66e58356d73"
@@ -1368,7 +1368,7 @@
       "slug": "beard",
       "description": "Premium beard care",
       "createdAt": "2026-05-25T08:54:33.374Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.499Z"
     },
     {
       "_id": "ad64e9c14888018947f2a707",
@@ -1376,7 +1376,7 @@
       "slug": "face",
       "description": "Face & skin essentials",
       "createdAt": "2026-05-25T08:54:33.374Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.499Z"
     },
     {
       "_id": "35f8d206e35ef9edf597495e",
@@ -1384,14 +1384,14 @@
       "slug": "hair",
       "description": "Hair styling & care",
       "createdAt": "2026-05-25T08:54:33.374Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.499Z"
     }
   ],
   "blogs": [
     {
       "_id": "fbfdb743e51636841dfba704",
       "isPublished": true,
-      "views": 4,
+      "views": 0,
       "title": "Decoding Fragrance: Finding Your Signature Scent",
       "slug": "decoding-fragrance",
       "excerpt": "Stop buying cologne blindly. Learn how to pick a scent that matches your personality.",
@@ -1404,7 +1404,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:16:24.999Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "ed1527b5af71d33dad29f1fb",
@@ -1422,7 +1422,7 @@
       "readTime": 4,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "03c85da41c33d8ddd282d9ad",
@@ -1440,7 +1440,7 @@
       "readTime": 7,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "21cd5355ae485af1fa27752c",
@@ -1458,7 +1458,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "0313a937d03045aa6d078fe8",
@@ -1476,7 +1476,7 @@
       "readTime": 4,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "9d4ba83a1dd05daf6633ca80",
@@ -1494,7 +1494,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "9f19aef1512ae9975710c709",
@@ -1512,7 +1512,7 @@
       "readTime": 9,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "065312b9f6d0bebb9c13af8a",
@@ -1530,7 +1530,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "4537ffdc0e3dad7cadb22e09",
@@ -1548,7 +1548,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "fd52ebae80731c369c432864",
@@ -1566,7 +1566,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "ad599d4895518f8a2e833250",
@@ -1584,7 +1584,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "fc7e34da624a8cf242d1cd36",
@@ -1602,7 +1602,7 @@
       "readTime": 4,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "6600715e4b74b020b7a38101",
@@ -1620,7 +1620,7 @@
       "readTime": 4,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "2b810ec0881777821030818f",
@@ -1638,7 +1638,7 @@
       "readTime": 4,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "78069ee3471fec1b31fdd676",
@@ -1656,7 +1656,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "d0324504b0eb01c04d9ad98c",
@@ -1674,7 +1674,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "47f77378dd8991d7407bd589",
@@ -1692,7 +1692,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "6ffe33c3fcb293bae8b7f174",
@@ -1710,7 +1710,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "cd9954ea981f963d62828cb0",
@@ -1728,7 +1728,7 @@
       "readTime": 7,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "072b8e596eb15b8ee6c15cff",
@@ -1746,7 +1746,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "7ffcf0914a51a88b7dbbdf18",
@@ -1764,7 +1764,7 @@
       "readTime": 3,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "6fc1f37cac0065b1d736159e",
@@ -1782,7 +1782,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "5f1175530ee637e949d9d0ea",
@@ -1800,7 +1800,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "2cdb5514f3648870eed953a6",
@@ -1818,7 +1818,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "a81ce737937c8a660b91a168",
@@ -1836,7 +1836,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "a01ebbd4b6590d0f268985af",
@@ -1854,7 +1854,7 @@
       "readTime": 4,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "1ec827d50ff08142235de5a3",
@@ -1872,7 +1872,7 @@
       "readTime": 4,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "781f44c97726f0918b53be4b",
@@ -1890,7 +1890,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "475ea43779e76e09411ddd42",
@@ -1908,7 +1908,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "98040d7bb180420f5985cabe",
@@ -1926,7 +1926,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "01122ff61318e4ab8da179dd",
@@ -1944,7 +1944,7 @@
       "readTime": 7,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "66b56b50affd00b242bfc883",
@@ -1962,7 +1962,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "89a131a5621b00c6a8c904ae",
@@ -1980,7 +1980,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "92879170635282dd623e29c5",
@@ -1998,7 +1998,7 @@
       "readTime": 4,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "a58c2a928504f3c243417584",
@@ -2016,7 +2016,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "91cef56831cd847602085322",
@@ -2034,7 +2034,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "ff67667c71c15e0b4c86d115",
@@ -2052,7 +2052,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "3c6bbbd4af0eddf7fbd63485",
@@ -2070,7 +2070,7 @@
       "readTime": 3,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "9599ea6fd7fe049b1004fb14",
@@ -2088,7 +2088,7 @@
       "readTime": 4,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "50b50a16333e3f236a15feff",
@@ -2106,7 +2106,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "50e9383f0f32ba00dd81e2fe",
@@ -2124,7 +2124,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "8930b24870df88253913641e",
@@ -2142,7 +2142,7 @@
       "readTime": 3,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "d409dce850f3c9801547697f",
@@ -2160,7 +2160,7 @@
       "readTime": 5,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "64c5d3b8b198034e10fb1889",
@@ -2178,7 +2178,7 @@
       "readTime": 8,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "ae7f7284af8b6b236669a813",
@@ -2196,7 +2196,7 @@
       "readTime": 4,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "614e2734d868833efcaf9891",
@@ -2214,7 +2214,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "20bf8358f68319f778fb4234",
@@ -2232,7 +2232,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "cb0fae7b1a8b2ac3d54620e6",
@@ -2250,7 +2250,7 @@
       "readTime": 4,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-26T10:51:09.616Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     }
   ],
   "coupons": [
@@ -2266,7 +2266,7 @@
       "maxUses": 1000,
       "expiresAt": "2027-12-31T00:00:00.000Z",
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     },
     {
       "_id": "f6cd02f6d2e7adfddfe91c41",
@@ -2280,7 +2280,7 @@
       "maxUses": 500,
       "expiresAt": "2027-06-30T00:00:00.000Z",
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-26T11:09:16.244Z"
+      "updatedAt": "2026-05-26T11:22:19.500Z"
     }
   ],
   "orders": [],

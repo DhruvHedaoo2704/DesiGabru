@@ -31,16 +31,65 @@ export default function Dashboard() {
     <>
       <SEO title="My Dashboard" />
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-10">
-        <div className="glass p-6 rounded-2xl mb-10 flex flex-col md:flex-row items-center gap-6">
-          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#B87333] flex items-center justify-center text-3xl font-bold text-[#050505]">
-            {user?.name?.[0] || 'G'}
+        {/* Premium VIP Elite Club Hero Card */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{ y: -4, scale: 1.01 }}
+          transition={{ type: 'spring', stiffness: 100, damping: 15 }}
+          className="relative overflow-hidden glass p-8 rounded-3xl mb-12 flex flex-col md:flex-row items-center gap-8 border border-[#D4AF37]/30 shadow-xl shadow-[#D4AF37]/5 group"
+        >
+          {/* Animated golden gradient visual overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#D4AF37]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+          
+          <div className="relative">
+            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#D4AF37] via-[#B87333] to-[#D4AF37] p-[3px] shadow-lg shadow-[#D4AF37]/20">
+              <div className="w-full h-full rounded-full bg-[#0d0d0d] flex items-center justify-center text-4xl font-extrabold text-[#D4AF37]" style={{ fontFamily: 'Orbitron' }}>
+                {user?.name?.[0] || 'G'}
+              </div>
+            </div>
+            {/* VIP Status Dot */}
+            <span className="absolute bottom-1 right-1 flex h-4 w-4">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-4 w-4 bg-green-500 border-2 border-black"></span>
+            </span>
           </div>
-          <div>
-            <h1 className="text-2xl font-bold" style={{ fontFamily: 'Orbitron' }}>{user?.name}</h1>
-            <p className="text-gray-400">{user?.email}</p>
-            <p className="text-[#D4AF37] text-sm mt-1">{user?.loyaltyPoints || 0} loyalty points</p>
+
+          <div className="flex-1 text-center md:text-left space-y-2">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
+              <h1 className="text-3xl font-black tracking-wide text-gradient-gold" style={{ fontFamily: 'Orbitron' }}>
+                {user?.name}
+              </h1>
+              <span className="text-[10px] tracking-widest font-bold bg-[#D4AF37]/20 text-[#D4AF37] px-3 py-1 rounded-full border border-[#D4AF37]/30 uppercase">
+                ✦ Elite VIP ✦
+              </span>
+            </div>
+            <p className="text-gray-400 text-sm font-medium">{user?.email}</p>
+            <p className="text-xs text-gray-500 max-w-xl leading-relaxed">
+              Welcome back to your ultimate grooming console. Level up your style ritual with premium formulations engineered for the modern Desi king.
+            </p>
           </div>
-        </div>
+
+          <div className="glass bg-white/5 border border-[#D4AF37]/10 p-6 rounded-2xl min-w-[200px] text-center shadow-inner relative overflow-hidden group-hover:border-[#D4AF37]/30 transition-colors">
+            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">
+              Loyalty Console
+            </div>
+            <div className="text-3xl font-black text-[#D4AF37]" style={{ fontFamily: 'Orbitron' }}>
+              {user?.loyaltyPoints || 0}
+            </div>
+            <div className="text-xs text-gray-500 mt-1">Available Points</div>
+            <div className="w-full bg-[#111] h-1.5 rounded-full mt-3 overflow-hidden border border-[#D4AF37]/10">
+              <div 
+                className="bg-gradient-to-r from-[#D4AF37] to-[#B87333] h-full rounded-full transition-all duration-500" 
+                style={{ width: `${Math.min(100, ((user?.loyaltyPoints || 0) / 1000) * 100)}%` }}
+              />
+            </div>
+            <div className="text-[9px] text-gray-500 mt-1.5 flex justify-between">
+              <span>Tier Progress</span>
+              <span>{user?.loyaltyPoints || 0}/1000 pts</span>
+            </div>
+          </div>
+        </motion.div>
 
         <div className="flex gap-2 mb-8 overflow-x-auto">
           {tabs.map(({ id, icon: Icon, label }) => (

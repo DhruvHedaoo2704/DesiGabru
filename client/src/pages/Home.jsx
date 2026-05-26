@@ -68,26 +68,85 @@ export default function Home() {
     <>
       <SEO title="Home" description="Premium cyber-luxury men's grooming" />
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        <Particles count={40} />
-        <div className="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 py-20">
-          <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-            <p className="text-[#B87333] text-sm tracking-[0.3em] uppercase mb-4">Cyber Luxury Grooming</p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6" style={{ fontFamily: 'Orbitron' }}>
-              For the Man Who{' '}
-              <span className="text-gradient-gold block">Owns His Vibe</span>
-            </h1>
-            <p className="text-gray-400 text-lg mb-8 max-w-lg">
-              Engineered for the modern Desi king. Matte black aesthetics meet gold-standard formulations.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/products" className="btn-primary flex items-center gap-2">
-                Shop Collection <FiArrowRight />
+        {/* Luxury Backlight Ambient Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-[#D4AF37]/5 via-[#B87333]/1 to-transparent rounded-full blur-[120px] pointer-events-none z-0" />
+        <div className="absolute right-[-10%] top-[-10%] w-[500px] h-[500px] bg-[#D4AF37]/5 rounded-full blur-[150px] pointer-events-none z-0 animate-pulse-slow" />
+        
+        <Particles count={50} />
+        
+        <div className="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 py-20 w-full">
+          <motion.div 
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { 
+                opacity: 1,
+                transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+              }
+            }}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col justify-center"
+          >
+            <motion.p 
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              className="text-[#D4AF37] text-xs font-bold tracking-[0.4em] uppercase mb-4"
+            >
+              ✦ The New Era of Desii Attitude ✦
+            </motion.p>
+            
+            <motion.h1 
+              variants={{
+                hidden: { opacity: 0, y: 25 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6" 
+              style={{ fontFamily: 'Orbitron' }}
+            >
+              For the Man Who <br className="hidden md:inline" />
+              <span className="text-gradient-gold block drop-shadow-[0_4px_12px_rgba(212,175,55,0.15)]">Bends the Rules</span>
+            </motion.h1>
+            
+            <motion.p 
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              className="text-gray-400 text-lg mb-8 max-w-lg leading-relaxed"
+            >
+              Formulated exclusively for the modern Desi icon. Cyber-luxury matte aesthetics meet gold-standard organic nourishment. Cleanse, stylize, and conquer.
+            </motion.p>
+            
+            <motion.div 
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              className="flex flex-wrap gap-4"
+            >
+              <Link to="/products" className="btn-primary flex items-center gap-2 group shadow-lg shadow-[#D4AF37]/10 hover:shadow-[#D4AF37]/20 transition-all">
+                Shop Collection 
+                <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/bundles" className="btn-outline">View Bundles</Link>
-            </div>
+              <Link to="/bundles" className="btn-outline hover:bg-white/5 transition-all">
+                View Bundles
+              </Link>
+            </motion.div>
           </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }}>
-            <Hero3D />
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.85, rotate: -5 }} 
+            animate={{ opacity: 1, scale: 1, rotate: 0 }} 
+            transition={{ type: 'spring', stiffness: 60, damping: 15, delay: 0.4 }}
+            className="relative flex items-center justify-center"
+          >
+            {/* Glowing Aura Ring behind Bottle */}
+            <div className="absolute w-[320px] h-[320px] rounded-full border border-[#D4AF37]/10 bg-[#D4AF37]/2 blur-[60px] animate-pulse-slow pointer-events-none" />
+            <div className="w-full relative z-10">
+              <Hero3D />
+            </div>
           </motion.div>
         </div>
       </section>
