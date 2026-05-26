@@ -11,6 +11,7 @@ import { getTrending, getFeatured } from '../services/api';
 import { testimonials } from '../data/staticData.js';
 import { normalizeProducts } from '../utils/normalizeProducts';
 import ProductCarousel from '../components/ProductCarousel';
+import slidePerfumeImg from './image.png';
 
 const heroSlides = [
   {
@@ -27,7 +28,7 @@ const heroSlides = [
     description: "Discover premium cologne formulas with deep woody notes and long-lasting projection. Engineered to make a statement that lingers all night.",
     actionText: "Explore Scents",
     actionLink: "/products?category=perfume",
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80&auto=format&fit=crop"
+    image: slidePerfumeImg
   },
   {
     tagline: "✦ Engineered Style Combos ✦",
