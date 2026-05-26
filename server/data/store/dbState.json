@@ -125,7 +125,7 @@
       "category": "beard",
       "price": 329,
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.210Z"
     },
     {
       "_id": "7b421ab859ff185ba2fb3a7c",
@@ -205,7 +205,7 @@
       "category": "beard",
       "price": 249,
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.210Z"
     },
     {
       "_id": "9614acc4e5ee7da7d1c7e50a",
@@ -288,7 +288,7 @@
       "category": "hair",
       "price": 399,
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.210Z"
     },
     {
       "_id": "7877d179b280a66e58356d73",
@@ -361,7 +361,7 @@
       "category": "hair",
       "price": 549,
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.210Z"
     },
     {
       "_id": "87440214eb5f19bb4813a62a",
@@ -441,7 +441,7 @@
       "category": "hair",
       "price": 599,
       "createdAt": "2026-05-25T12:37:45.110Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.211Z"
     },
     {
       "_id": "59f57ce9aeef837e8bc09d4d",
@@ -515,7 +515,7 @@
       "category": "face",
       "price": 364,
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.211Z"
     },
     {
       "_id": "90c1dc81cba32a35fce673d5",
@@ -589,7 +589,7 @@
       "category": "face",
       "price": 345,
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.211Z"
     }
   ],
   "categories": [
@@ -599,7 +599,7 @@
       "slug": "beard",
       "description": "Premium beard care",
       "createdAt": "2026-05-25T08:54:33.374Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.210Z"
     },
     {
       "_id": "ad64e9c14888018947f2a707",
@@ -607,7 +607,7 @@
       "slug": "face",
       "description": "Face & skin essentials",
       "createdAt": "2026-05-25T08:54:33.374Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.210Z"
     },
     {
       "_id": "35f8d206e35ef9edf597495e",
@@ -615,7 +615,7 @@
       "slug": "hair",
       "description": "Hair styling & care",
       "createdAt": "2026-05-25T08:54:33.374Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.210Z"
     }
   ],
   "blogs": [
@@ -633,7 +633,7 @@
       "readTime": 6,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.211Z"
     },
     {
       "_id": "2a0b624d1d946d551e6f0c03",
@@ -649,7 +649,7 @@
       "readTime": 8,
       "author": "8a3e3a2f7297ba848d701685",
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.211Z"
     }
   ],
   "coupons": [
@@ -665,7 +665,7 @@
       "maxUses": 1000,
       "expiresAt": "2027-12-31T00:00:00.000Z",
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.211Z"
     },
     {
       "_id": "f6cd02f6d2e7adfddfe91c41",
@@ -679,7 +679,7 @@
       "maxUses": 500,
       "expiresAt": "2027-06-30T00:00:00.000Z",
       "createdAt": "2026-05-25T08:54:33.375Z",
-      "updatedAt": "2026-05-25T12:55:32.924Z"
+      "updatedAt": "2026-05-26T05:36:56.211Z"
     }
   ],
   "orders": [],
